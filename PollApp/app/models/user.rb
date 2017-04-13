@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :user_name, presence: true, uniqueness: true
+
   has_many :authored_polls,
     class_name: "Poll",
     primary_key: :id,
